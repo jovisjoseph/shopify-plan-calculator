@@ -40,7 +40,7 @@ function App() {
     {
       name: "Plus",
       monthlyCost: 2400,
-      onlineRate: 0.0,
+      onlineRate: 0.02,
       onlineFee: 0.0,
       color: "#000000",
       bgGradient: "from-gray-50 to-gray-200",
