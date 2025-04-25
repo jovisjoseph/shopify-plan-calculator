@@ -160,22 +160,24 @@ function App() {
 
   // Render component
   return (
-    <div className="min-h-screen  py-8 px-4 font-sans">
-      <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-xl overflow-hidden">
+    <div className="min-h-screen py-4 px-2 sm:py-8 sm:px-4 font-sans">
+      <div className="max-w-7xl mx-auto bg-white rounded-lg sm:rounded-2xl shadow-lg sm:shadow-xl overflow-hidden">
         {/* Header */}
-        <div className="relative bg-gradient-to-r from-indigo-600 to-blue-500 px-8 py-6 text-white">
+        <div className="relative bg-gradient-to-r from-indigo-600 to-blue-500 px-4 sm:px-8 py-4 sm:py-6 text-white">
           <div className="absolute top-0 right-0 w-full h-full opacity-20"></div>
-          <div className="relative z-10 flex justify-between items-center">
-            <div>
-              <h1 className="text-3xl font-bold">Shopify Plan Calculator</h1>
-              <p className="mt-2 text-blue-100">
+          <div className="relative z-10 flex flex-col sm:flex-row justify-between items-center">
+            <div className="text-center sm:text-left mb-4 sm:mb-0">
+              <h1 className="text-xl sm:text-2xl md:text-3xl font-bold">
+                Shopify Plan Calculator
+              </h1>
+              <p className="mt-1 sm:mt-2 text-blue-100 text-sm sm:text-base">
                 Find the most cost-effective plan for your business
               </p>
             </div>
             <div className="flex space-x-2">
               <button
                 onClick={() => setSelectedTab("calculator")}
-                className={`px-4 py-2 rounded-md transition-all ${
+                className={`px-3 py-1 sm:px-4 sm:py-2 rounded-md transition-all text-sm sm:text-base ${
                   selectedTab === "calculator"
                     ? "bg-white text-indigo-700 shadow-md"
                     : "bg-indigo-700/40 text-white hover:bg-indigo-700/60"
@@ -185,7 +187,7 @@ function App() {
               </button>
               <button
                 onClick={() => setSelectedTab("about")}
-                className={`px-4 py-2 rounded-md transition-all ${
+                className={`px-3 py-1 sm:px-4 sm:py-2 rounded-md transition-all text-sm sm:text-base ${
                   selectedTab === "about"
                     ? "bg-white text-indigo-700 shadow-md"
                     : "bg-indigo-700/40 text-white hover:bg-indigo-700/60"
@@ -198,9 +200,9 @@ function App() {
         </div>
 
         {selectedTab === "calculator" ? (
-          <div className="p-8">
-            <div className="flex justify-between items-center mb-6">
-              <p className="text-sm text-gray-500 max-w-3xl mr-4">
+          <div className="p-4 sm:p-6 md:p-8">
+            <div className="flex flex-col sm:flex-row justify-between items-center mb-4 sm:mb-6">
+              <p className="text-xs sm:text-sm text-gray-500 max-w-3xl mb-3 sm:mb-0 sm:mr-4 text-center sm:text-left">
                 Every variable in this calculator is editable. Default values
                 are based on US Shopify plans. To see plans in your region,
                 visit the{" "}
@@ -216,10 +218,10 @@ function App() {
               </p>
               <button
                 onClick={resetToDefaults}
-                className="flex items-center px-4 py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 transition-all shadow-sm"
+                className="flex items-center px-3 py-1 sm:px-4 sm:py-2 bg-gray-100 text-gray-700 rounded-md hover:bg-gray-200 transition-all shadow-sm text-sm whitespace-nowrap"
               >
                 <svg
-                  className="w-4 h-4 mr-2"
+                  className="w-3 h-3 sm:w-4 sm:h-4 mr-1 sm:mr-2"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -232,15 +234,15 @@ function App() {
                     d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
                   ></path>
                 </svg>
-                Reset to Defaults
+                Reset
               </button>
             </div>
 
             {/* Main calculator inputs */}
-            <div className="mb-8 p-6 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-xl shadow-sm border border-blue-100">
-              <h2 className="text-xl font-bold mb-6 text-indigo-800 flex items-center">
+            <div className="mb-6 sm:mb-8 p-3 sm:p-6 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 rounded-lg sm:rounded-xl shadow-sm border border-blue-100">
+              <h2 className="text-lg sm:text-xl font-bold mb-4 sm:mb-6 text-indigo-800 flex items-center">
                 <svg
-                  className="w-5 h-5 mr-2"
+                  className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -256,9 +258,9 @@ function App() {
                 Store Parameters
               </h2>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-8">
                 <div className="relative">
-                  <label className="block text-indigo-800 font-medium mb-2">
+                  <label className="block text-indigo-800 font-medium mb-1 sm:mb-2 text-sm sm:text-base">
                     Average Order Value ($)
                   </label>
                   <div className="relative">
@@ -269,17 +271,17 @@ function App() {
                       type="number"
                       value={aov}
                       onChange={(e) => handleInputChange(e, setAOV)}
-                      className="w-full p-3 pl-8 border border-indigo-200 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 focus:outline-none transition-all"
+                      className="w-full p-2 sm:p-3 pl-7 sm:pl-8 border border-indigo-200 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 focus:outline-none transition-all text-sm sm:text-base"
                       min="1"
                       step="1"
                     />
                   </div>
-                  <p className="mt-2 text-xs text-indigo-600">
+                  <p className="mt-1 sm:mt-2 text-xs text-indigo-600">
                     The average value of each order in your store
                   </p>
                 </div>
                 <div className="relative">
-                  <label className="block text-indigo-800 font-medium mb-2">
+                  <label className="block text-indigo-800 font-medium mb-1 sm:mb-2 text-sm sm:text-base">
                     Monthly Order Count
                   </label>
                   <div className="relative">
@@ -290,20 +292,20 @@ function App() {
                       type="number"
                       value={orderCount}
                       onChange={(e) => handleInputChange(e, setOrderCount)}
-                      className="w-full p-3 pl-8 border border-indigo-200 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 focus:outline-none transition-all"
+                      className="w-full p-2 sm:p-3 pl-7 sm:pl-8 border border-indigo-200 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 focus:outline-none transition-all text-sm sm:text-base"
                       min="1"
                       step="1"
                     />
                   </div>
-                  <p className="mt-2 text-xs text-indigo-600">
+                  <p className="mt-1 sm:mt-2 text-xs text-indigo-600">
                     The number of orders you process each month
                   </p>
                 </div>
               </div>
 
-              <div className="mt-6 p-3 bg-white/70 rounded-lg border border-indigo-100 flex items-center">
+              <div className="mt-4 sm:mt-6 p-2 sm:p-3 bg-white/70 rounded-lg border border-indigo-100 flex flex-col sm:flex-row items-start sm:items-center">
                 <svg
-                  className="w-5 h-5 text-amber-500 mr-2 flex-shrink-0"
+                  className="w-4 h-4 sm:w-5 sm:h-5 text-amber-500 mb-2 sm:mb-0 sm:mr-2 flex-shrink-0"
                   fill="currentColor"
                   viewBox="0 0 20 20"
                   xmlns="http://www.w3.org/2000/svg"
@@ -314,7 +316,7 @@ function App() {
                     clipRule="evenodd"
                   ></path>
                 </svg>
-                <p className="text-sm text-gray-600">
+                <p className="text-xs sm:text-sm text-gray-600">
                   Need a better AOV? A conversion-optimized cart might be the
                   answer.{" "}
                   <a
@@ -330,10 +332,10 @@ function App() {
             </div>
 
             {/* Results */}
-            <div className="mb-8">
-              <h2 className="text-xl font-bold mb-4 text-gray-800 flex items-center">
+            <div className="mb-6 sm:mb-8">
+              <h2 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4 text-gray-800 flex items-center">
                 <svg
-                  className="w-5 h-5 mr-2"
+                  className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -348,27 +350,27 @@ function App() {
                 </svg>
                 Cost Comparison
               </h2>
-              <div className="overflow-x-auto shadow-lg rounded-xl">
+              <div className="overflow-x-auto shadow-lg rounded-lg sm:rounded-xl">
                 <table className="min-w-full bg-white border-collapse">
                   <thead>
                     <tr className="bg-gradient-to-r from-gray-100 to-gray-200">
-                      <th className="py-3 px-4 text-left text-gray-700 font-semibold rounded-tl-xl">
+                      <th className="py-2 px-2 sm:py-3 sm:px-4 text-left text-gray-700 font-semibold rounded-tl-lg sm:rounded-tl-xl text-xs sm:text-sm">
                         Rank
                       </th>
-                      <th className="py-3 px-4 text-left text-gray-700 font-semibold">
+                      <th className="py-2 px-2 sm:py-3 sm:px-4 text-left text-gray-700 font-semibold text-xs sm:text-sm">
                         Plan
                       </th>
-                      <th className="py-3 px-4 text-left text-gray-700 font-semibold">
+                      <th className="py-2 px-2 sm:py-3 sm:px-4 text-left text-gray-700 font-semibold text-xs sm:text-sm">
                         Monthly Fee
                       </th>
-                      <th className="py-3 px-4 text-left text-gray-700 font-semibold">
+                      <th className="py-2 px-2 sm:py-3 sm:px-4 text-left text-gray-700 font-semibold text-xs sm:text-sm">
                         Transaction Fees
                       </th>
-                      <th className="py-3 px-4 text-left text-gray-700 font-semibold">
-                        Total Monthly Cost
+                      <th className="py-2 px-2 sm:py-3 sm:px-4 text-left text-gray-700 font-semibold text-xs sm:text-sm">
+                        Total Cost
                       </th>
-                      <th className="py-3 px-4 text-left text-gray-700 font-semibold rounded-tr-xl">
-                        Cost Per Order
+                      <th className="py-2 px-2 sm:py-3 sm:px-4 text-left text-gray-700 font-semibold rounded-tr-lg sm:rounded-tr-xl text-xs sm:text-sm">
+                        Per Order
                       </th>
                     </tr>
                   </thead>
@@ -389,74 +391,74 @@ function App() {
                               : "hover:bg-gray-50 transition-colors border-t border-gray-100"
                           }
                         >
-                          <td className="py-4 px-4">
+                          <td className="py-2 px-2 sm:py-4 sm:px-4">
                             {index === 0 ? (
-                              <div className="flex justify-center items-center w-8 h-8 bg-white text-green-700 rounded-full font-bold shadow-sm border-2 border-green-500">
+                              <div className="flex justify-center items-center w-6 h-6 sm:w-8 sm:h-8 bg-white text-green-700 rounded-full font-bold shadow-sm border-2 border-green-500 text-xs sm:text-sm">
                                 {index + 1}
                               </div>
                             ) : (
-                              <div className="flex justify-center items-center w-8 h-8 bg-gray-100 text-gray-600 rounded-full">
+                              <div className="flex justify-center items-center w-6 h-6 sm:w-8 sm:h-8 bg-gray-100 text-gray-600 rounded-full text-xs sm:text-sm">
                                 {index + 1}
                               </div>
                             )}
                           </td>
                           <td
-                            className="py-4 px-4 font-medium relative"
+                            className="py-2 px-2 sm:py-4 sm:px-4 font-medium relative"
                             style={{ borderLeft: `4px solid ${planColor}` }}
                           >
                             <div className="flex items-center">
-                              <div className="mr-3">
+                              <div className="mr-2 sm:mr-3">
                                 <div
-                                  className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-xs shadow-sm"
+                                  className="w-6 h-6 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center text-white font-bold text-xs shadow-sm"
                                   style={{ backgroundColor: planColor }}
                                 >
                                   {result.name.substring(0, 2)}
                                 </div>
                               </div>
                               <div>
-                                <div className="font-bold text-gray-800">
+                                <div className="font-bold text-gray-800 text-xs sm:text-sm">
                                   {result.name}
                                 </div>
                                 {index === 0 && (
-                                  <span className="text-xs bg-green-100 text-green-800 px-2 py-0.5 rounded-full font-medium">
+                                  <span className="text-xs bg-green-100 text-green-800 px-1 sm:px-2 py-0.5 rounded-full font-medium hidden sm:inline-block">
                                     Best Value
                                   </span>
                                 )}
                               </div>
                             </div>
                           </td>
-                          <td className="py-4 px-4">
-                            <div className="font-medium">
+                          <td className="py-2 px-2 sm:py-4 sm:px-4">
+                            <div className="font-medium text-xs sm:text-sm">
                               ${result.monthlySubscription.toFixed(2)}
                             </div>
-                            <div className="text-xs text-gray-500">
+                            <div className="text-xs text-gray-500 hidden sm:block">
                               Base fee
                             </div>
                           </td>
-                          <td className="py-4 px-4">
-                            <div className="font-medium">
+                          <td className="py-2 px-2 sm:py-4 sm:px-4">
+                            <div className="font-medium text-xs sm:text-sm">
                               ${result.transactionFees.toFixed(2)}
                             </div>
-                            <div className="text-xs text-gray-500">
+                            <div className="text-xs text-gray-500 hidden sm:block">
                               For {orderCount} orders
                             </div>
                           </td>
-                          <td className="py-4 px-4">
+                          <td className="py-2 px-2 sm:py-4 sm:px-4">
                             <div
-                              className="text-lg font-bold"
+                              className="text-sm sm:text-lg font-bold"
                               style={{ color: planColor }}
                             >
                               ${result.totalCost.toFixed(2)}
                             </div>
-                            <div className="text-xs text-gray-500">
+                            <div className="text-xs text-gray-500 hidden sm:block">
                               Total cost
                             </div>
                           </td>
-                          <td className="py-4 px-4">
-                            <div className="font-medium">
+                          <td className="py-2 px-2 sm:py-4 sm:px-4">
+                            <div className="font-medium text-xs sm:text-sm">
                               ${result.costPerOrder.toFixed(2)}
                             </div>
-                            <div className="text-xs text-gray-500">
+                            <div className="text-xs text-gray-500 hidden sm:block">
                               Per order
                             </div>
                           </td>
@@ -469,10 +471,10 @@ function App() {
             </div>
 
             {/* Plan configuration */}
-            <div className="mb-8">
-              <h2 className="text-xl font-bold mb-4 text-gray-800 flex items-center">
+            <div className="mb-6 sm:mb-8">
+              <h2 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4 text-gray-800 flex items-center">
                 <svg
-                  className="w-5 h-5 mr-2"
+                  className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -487,21 +489,21 @@ function App() {
                 </svg>
                 Plan Details
               </h2>
-              <div className="overflow-x-auto shadow-lg rounded-xl">
+              <div className="overflow-x-auto shadow-lg rounded-lg sm:rounded-xl">
                 <table className="min-w-full bg-white border-collapse">
                   <thead>
                     <tr className="bg-gradient-to-r from-gray-100 to-gray-200">
-                      <th className="py-3 px-4 text-left text-gray-700 font-semibold rounded-tl-xl">
+                      <th className="py-2 px-2 sm:py-3 sm:px-4 text-left text-gray-700 font-semibold rounded-tl-lg sm:rounded-tl-xl text-xs sm:text-sm">
                         Plan
                       </th>
-                      <th className="py-3 px-4 text-left text-gray-700 font-semibold">
-                        Monthly Fee ($)
+                      <th className="py-2 px-2 sm:py-3 sm:px-4 text-left text-gray-700 font-semibold text-xs sm:text-sm">
+                        Monthly Fee
                       </th>
-                      <th className="py-3 px-4 text-left text-gray-700 font-semibold">
-                        Transaction Rate (%)
+                      <th className="py-2 px-2 sm:py-3 sm:px-4 text-left text-gray-700 font-semibold text-xs sm:text-sm">
+                        Transaction Rate
                       </th>
-                      <th className="py-3 px-4 text-left text-gray-700 font-semibold rounded-tr-xl">
-                        Per Transaction Fee ($)
+                      <th className="py-2 px-2 sm:py-3 sm:px-4 text-left text-gray-700 font-semibold rounded-tr-lg sm:rounded-tr-xl text-xs sm:text-sm">
+                        Per Transaction Fee
                       </th>
                     </tr>
                   </thead>
@@ -512,55 +514,55 @@ function App() {
                         className={`hover:bg-gradient-to-r ${plan.bgGradient} transition-colors`}
                       >
                         <td
-                          className="py-4 px-4 font-medium relative"
+                          className="py-2 px-2 sm:py-4 sm:px-4 font-medium relative"
                           style={{ borderLeft: `4px solid ${plan.color}` }}
                         >
                           <div className="flex items-center">
-                            <div className="mr-3">
+                            <div className="mr-2 sm:mr-3">
                               <div
-                                className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-xs shadow-sm"
+                                className="w-6 h-6 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center text-white font-bold text-xs shadow-sm"
                                 style={{ backgroundColor: plan.color }}
                               >
                                 {plan.name.substring(0, 2)}
                               </div>
                             </div>
-                            <div className="font-bold text-gray-800">
+                            <div className="font-bold text-gray-800 text-xs sm:text-sm">
                               {plan.name}
                             </div>
                           </div>
                         </td>
-                        <td className="py-4 px-4">
+                        <td className="py-2 px-2 sm:py-4 sm:px-4">
                           <input
                             type="number"
                             value={plan.monthlyCost}
                             onChange={(e) =>
                               updatePlan(index, "monthlyCost", e.target.value)
                             }
-                            className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 focus:outline-none transition-all"
+                            className="w-full p-1 sm:p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 focus:outline-none transition-all text-xs sm:text-sm"
                             min="0"
                             step="0.01"
                           />
                         </td>
-                        <td className="py-4 px-4">
+                        <td className="py-2 px-2 sm:py-4 sm:px-4">
                           <input
                             type="number"
                             value={plan.onlineRate * 100}
                             onChange={(e) =>
                               updatePlan(index, "onlineRate", e.target.value)
                             }
-                            className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 focus:outline-none transition-all"
+                            className="w-full p-1 sm:p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 focus:outline-none transition-all text-xs sm:text-sm"
                             min="0"
                             step="0.01"
                           />
                         </td>
-                        <td className="py-4 px-4">
+                        <td className="py-2 px-2 sm:py-4 sm:px-4">
                           <input
                             type="number"
                             value={plan.onlineFee}
                             onChange={(e) =>
                               updatePlan(index, "onlineFee", e.target.value)
                             }
-                            className="w-full p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 focus:outline-none transition-all"
+                            className="w-full p-1 sm:p-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-400 focus:border-indigo-400 focus:outline-none transition-all text-xs sm:text-sm"
                             min="0"
                             step="0.01"
                           />
@@ -573,10 +575,10 @@ function App() {
             </div>
 
             {/* Breakeven Points */}
-            <div className="mb-8">
-              <h2 className="text-xl font-bold mb-4 text-gray-800 flex items-center">
+            <div className="mb-6 sm:mb-8">
+              <h2 className="text-lg sm:text-xl font-bold mb-2 sm:mb-4 text-gray-800 flex items-center">
                 <svg
-                  className="w-5 h-5 mr-2"
+                  className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -592,7 +594,7 @@ function App() {
                 Breakeven Points
               </h2>
               {breakeven.length > 0 ? (
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
                   {breakeven.map((point, index) => {
                     const plan1 = plans.find((p) => p.name === point.plan1);
                     const plan2 = plans.find((p) => p.name === point.plan2);
@@ -602,22 +604,22 @@ function App() {
                     return (
                       <div
                         key={index}
-                        className="p-5 border border-gray-200 rounded-xl shadow-sm bg-gradient-to-r from-blue-50 to-indigo-50 hover:shadow-md transition-all"
+                        className="p-3 sm:p-5 border border-gray-200 rounded-lg sm:rounded-xl shadow-sm bg-gradient-to-r from-blue-50 to-indigo-50 hover:shadow-md transition-all"
                       >
-                        <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center justify-between mb-3 sm:mb-4">
                           <div className="flex items-center">
                             <div
-                              className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-xs shadow-sm mr-2"
+                              className="w-6 h-6 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center text-white font-bold text-xs shadow-sm mr-1 sm:mr-2"
                               style={{ backgroundColor: plan1Color }}
                             >
                               {point.plan1.substring(0, 2)}
                             </div>
-                            <span className="font-bold text-gray-800">
+                            <span className="font-bold text-gray-800 text-xs sm:text-sm">
                               {point.plan1}
                             </span>
                           </div>
                           <svg
-                            className="w-6 h-6 text-gray-400"
+                            className="w-4 h-4 sm:w-6 sm:h-6 text-gray-400"
                             fill="none"
                             stroke="currentColor"
                             viewBox="0 0 24 24"
@@ -632,27 +634,27 @@ function App() {
                           </svg>
                           <div className="flex items-center">
                             <div
-                              className="w-10 h-10 rounded-lg flex items-center justify-center text-white font-bold text-xs shadow-sm mr-2"
+                              className="w-6 h-6 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center text-white font-bold text-xs shadow-sm mr-1 sm:mr-2"
                               style={{ backgroundColor: plan2Color }}
                             >
                               {point.plan2.substring(0, 2)}
                             </div>
-                            <span className="font-bold text-gray-800">
+                            <span className="font-bold text-gray-800 text-xs sm:text-sm">
                               {point.plan2}
                             </span>
                           </div>
                         </div>
-                        <div className="text-center bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                        <div className="text-center bg-white p-2 sm:p-4 rounded-lg shadow-sm border border-gray-200">
                           <span
-                            className="text-3xl font-bold"
+                            className="text-xl sm:text-3xl font-bold"
                             style={{ color: plan2Color }}
                           >
                             {point.orderCount}
                           </span>
-                          <span className="text-sm text-gray-600 block mt-1">
+                          <span className="text-xs sm:text-sm text-gray-600 block mt-1">
                             orders/month
                           </span>
-                          <div className="mt-2 pt-2 border-t border-gray-100">
+                          <div className="mt-1 sm:mt-2 pt-1 sm:pt-2 border-t border-gray-100">
                             <span className="text-xs text-gray-600">
                               Switch plans at this order volume
                             </span>
@@ -663,9 +665,9 @@ function App() {
                   })}
                 </div>
               ) : (
-                <div className="p-5 bg-amber-50 border border-amber-200 rounded-xl text-amber-800 flex items-center">
+                <div className="p-3 sm:p-5 bg-amber-50 border border-amber-200 rounded-lg sm:rounded-xl text-amber-800 flex flex-col sm:flex-row items-start sm:items-center">
                   <svg
-                    className="w-6 h-6 text-amber-500 mr-3 flex-shrink-0"
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-amber-500 mr-0 mb-2 sm:mb-0 sm:mr-3 flex-shrink-0"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -677,10 +679,10 @@ function App() {
                     ></path>
                   </svg>
                   <div>
-                    <p className="font-medium">
+                    <p className="font-medium text-sm sm:text-base">
                       No relevant breakeven points found with current settings.
                     </p>
-                    <p className="text-sm mt-1">
+                    <p className="text-xs sm:text-sm mt-1">
                       Try adjusting your AOV or plan parameters to find upgrade
                       opportunities.
                     </p>
@@ -690,10 +692,10 @@ function App() {
             </div>
 
             {/* Formula explanation */}
-            <div className="mb-8 p-6 bg-gradient-to-r from-gray-50 to-gray-100 rounded-xl shadow-sm border border-gray-200">
-              <h3 className="font-bold mb-4 text-gray-800 flex items-center">
+            <div className="mb-6 sm:mb-8 p-3 sm:p-6 bg-gradient-to-r from-gray-50 to-gray-100 rounded-lg sm:rounded-xl shadow-sm border border-gray-200">
+              <h3 className="font-bold mb-2 sm:mb-4 text-gray-800 flex items-center text-sm sm:text-base">
                 <svg
-                  className="w-5 h-5 mr-2"
+                  className="w-4 h-4 sm:w-5 sm:h-5 mr-1 sm:mr-2"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -708,43 +710,43 @@ function App() {
                 </svg>
                 How We Calculate
               </h3>
-              <div className="space-y-3">
-                <div className="p-4 bg-white rounded-lg border border-gray-200 hover:shadow-sm transition-shadow">
-                  <p className="font-medium text-gray-800 mb-1">
+              <div className="space-y-2 sm:space-y-3">
+                <div className="p-2 sm:p-4 bg-white rounded-lg border border-gray-200 hover:shadow-sm transition-shadow">
+                  <p className="font-medium text-gray-800 mb-1 text-xs sm:text-sm">
                     Total Monthly Cost
                   </p>
                   <div className="flex items-center">
-                    <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-800 font-bold flex items-center justify-center mr-3">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-indigo-100 text-indigo-800 font-bold flex items-center justify-center mr-2 sm:mr-3 text-xs sm:text-sm">
                       $
                     </div>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 text-xs sm:text-sm">
                       Monthly Fee + Transaction Fees
                     </p>
                   </div>
                 </div>
-                <div className="p-4 bg-white rounded-lg border border-gray-200 hover:shadow-sm transition-shadow">
-                  <p className="font-medium text-gray-800 mb-1">
+                <div className="p-2 sm:p-4 bg-white rounded-lg border border-gray-200 hover:shadow-sm transition-shadow">
+                  <p className="font-medium text-gray-800 mb-1 text-xs sm:text-sm">
                     Transaction Fees
                   </p>
                   <div className="flex items-center">
-                    <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-800 font-bold flex items-center justify-center mr-3">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-indigo-100 text-indigo-800 font-bold flex items-center justify-center mr-2 sm:mr-3 text-xs sm:text-sm">
                       %
                     </div>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 text-xs sm:text-sm">
                       Order Count × (AOV × Transaction Rate + Per-Transaction
                       Fee)
                     </p>
                   </div>
                 </div>
-                <div className="p-4 bg-white rounded-lg border border-gray-200 hover:shadow-sm transition-shadow">
-                  <p className="font-medium text-gray-800 mb-1">
+                <div className="p-2 sm:p-4 bg-white rounded-lg border border-gray-200 hover:shadow-sm transition-shadow">
+                  <p className="font-medium text-gray-800 mb-1 text-xs sm:text-sm">
                     Breakeven Point
                   </p>
                   <div className="flex items-center">
-                    <div className="w-8 h-8 rounded-full bg-indigo-100 text-indigo-800 font-bold flex items-center justify-center mr-3">
+                    <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-indigo-100 text-indigo-800 font-bold flex items-center justify-center mr-2 sm:mr-3 text-xs sm:text-sm">
                       #
                     </div>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 text-xs sm:text-sm">
                       Monthly Fee Difference ÷ (AOV × Rate Difference + Fixed
                       Fee Difference)
                     </p>
@@ -754,17 +756,17 @@ function App() {
             </div>
           </div>
         ) : (
-          <div className="p-8">
+          <div className="p-4 sm:p-8">
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl font-bold mb-6 text-gray-800">
+              <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 text-gray-800">
                 About This Calculator
               </h2>
 
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-2 text-indigo-700">
+              <div className="mb-4 sm:mb-6">
+                <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2 text-indigo-700">
                   What is this tool?
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">
                   This Shopify Plan Calculator helps merchants find the most
                   cost-effective Shopify plan based on their specific business
                   metrics. By considering your average order value (AOV) and
@@ -773,11 +775,11 @@ function App() {
                 </p>
               </div>
 
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-2 text-indigo-700">
+              <div className="mb-4 sm:mb-6">
+                <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2 text-indigo-700">
                   How do I use it?
                 </h3>
-                <ol className="list-decimal pl-6 space-y-2 text-gray-600">
+                <ol className="list-decimal pl-4 sm:pl-6 space-y-1 sm:space-y-2 text-gray-600 text-sm sm:text-base">
                   <li>
                     Enter your store's <strong>Average Order Value</strong>{" "}
                     (AOV)
@@ -800,19 +802,19 @@ function App() {
                 </ol>
               </div>
 
-              <div className="mb-6">
-                <h3 className="text-lg font-semibold mb-2 text-indigo-700">
+              <div className="mb-4 sm:mb-6">
+                <h3 className="text-base sm:text-lg font-semibold mb-1 sm:mb-2 text-indigo-700">
                   Why trust this calculator?
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">
                   This calculator uses straightforward, transparent formulas to
                   determine costs. All calculations are done in real-time based
                   on the parameters you provide, with no hidden variables or
                   assumptions.
                 </p>
-                <div className="flex items-start mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+                <div className="flex items-start mt-2 sm:mt-4 p-3 sm:p-4 bg-blue-50 rounded-lg border border-blue-200">
                   <svg
-                    className="w-6 h-6 text-blue-500 mr-3 flex-shrink-0 mt-0.5"
+                    className="w-5 h-5 sm:w-6 sm:h-6 text-blue-500 mr-2 sm:mr-3 flex-shrink-0 mt-0 sm:mt-0.5"
                     fill="currentColor"
                     viewBox="0 0 20 20"
                     xmlns="http://www.w3.org/2000/svg"
@@ -823,7 +825,7 @@ function App() {
                       clipRule="evenodd"
                     ></path>
                   </svg>
-                  <p className="text-sm text-blue-800">
+                  <p className="text-xs sm:text-sm text-blue-800">
                     <strong>Remember:</strong> While this calculator provides
                     accurate cost comparisons, your final decision should
                     consider other factors like plan features, additional tools,
@@ -832,11 +834,11 @@ function App() {
                 </div>
               </div>
 
-              <div className="p-5 bg-gradient-to-r from-indigo-50 to-blue-50 rounded-xl border border-indigo-100 mt-8">
-                <h3 className="text-lg font-semibold mb-3 text-indigo-700">
+              <div className="p-3 sm:p-5 bg-gradient-to-r from-indigo-50 to-blue-50 rounded-lg sm:rounded-xl border border-indigo-100 mt-4 sm:mt-8">
+                <h3 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3 text-indigo-700">
                   Need help with your Shopify store?
                 </h3>
-                <p className="text-gray-600 mb-4">
+                <p className="text-gray-600 mb-3 sm:mb-4 text-sm sm:text-base">
                   Optimize your store's conversion rate with CornerCart - a
                   conversion-focused cart solution designed to boost your AOV
                   and decrease cart abandonment.
@@ -845,11 +847,11 @@ function App() {
                   href="https://apps.shopify.com/cornercart"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium"
+                  className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium text-xs sm:text-sm"
                 >
                   Learn More About CornerCart
                   <svg
-                    className="w-4 h-4 ml-2"
+                    className="w-3 h-3 sm:w-4 sm:h-4 ml-1 sm:ml-2"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -869,8 +871,8 @@ function App() {
         )}
 
         {/* Footer */}
-        <div className="bg-gray-50 px-8 py-4 border-t border-gray-200">
-          <p className="text-center text-sm text-gray-500">
+        <div className="bg-gray-50 px-4 sm:px-8 py-3 sm:py-4 border-t border-gray-200">
+          <p className="text-center text-xs sm:text-sm text-gray-500">
             Made with ❤️ by{" "}
             <a
               href="https://apps.shopify.com/cornercart"
