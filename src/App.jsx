@@ -320,7 +320,7 @@ function App() {
                   Need a better AOV? A conversion-optimized cart might be the
                   answer.{" "}
                   <a
-                    href="https://apps.shopify.com/cornercart"
+                    href="https://apps.shopify.com/cornercart?utm_source=plan_calculator&utm_medium=app&utm_campaign=calculator_tool"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-indigo-600 hover:text-indigo-800 font-semibold"
@@ -844,7 +844,7 @@ function App() {
                   and decrease cart abandonment.
                 </p>
                 <a
-                  href="https://apps.shopify.com/cornercart"
+                  href="https://apps.shopify.com/cornercart?utm_source=plan_calculator&utm_medium=app&utm_campaign=calculator_tool"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors font-medium text-xs sm:text-sm"
@@ -875,7 +875,7 @@ function App() {
           <p className="text-center text-xs sm:text-sm text-gray-500">
             Made with ❤️ by{" "}
             <a
-              href="https://apps.shopify.com/cornercart"
+              href="https://apps.shopify.com/cornercart?utm_source=plan_calculator&utm_medium=app&utm_campaign=calculator_tool"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-indigo-600 hover:text-indigo-800"
